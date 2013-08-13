@@ -141,9 +141,9 @@ class HydraResolver(object):
         '''
         # if we got a twisted.names.error.DomainError
         if (isinstance(failure.value, tn.error.DomainError) and 
-            isinstance(failure.value.message, tn.dns.Message)):
+            isinstance(failure.value.args, tn.dns.Message)):
             # pull out the message
-            msg = failure.value.message
+            msg = failure.value.args
             # pull out hostname from Message
             hostname = msg.queries[0].name.name
             # map the response code to a meaningful message 
