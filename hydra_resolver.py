@@ -51,7 +51,7 @@ class CustomResolver(Resolver):
             try:
                 addresses = self.tld_servers[tld.lower()]
             except KeyError as e:
-                log.err("TLD {} not found in tld_servers.pkl".format(tld))
+                log.err("TLD {} not found in tld_nameservers.pkl".format(tld))
   
         # choose a random server from the list 
         used = choice(addresses)
